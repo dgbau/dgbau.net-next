@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
+const IEX_KEY = process.env.IEX_KEY || '0000000000';
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -14,6 +16,9 @@ export default function Home() {
 
         <p className={styles.description}>
           <code className={styles.code}>Made with ❤️ and next.js</code>
+        </p>
+        <p className={styles.description}>
+          <code className={styles.code}>{IEX_KEY}</code>
         </p>
 
         <div className={styles.grid}>
