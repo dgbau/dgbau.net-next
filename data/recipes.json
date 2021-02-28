@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Homemade Paneer",
+    "subtitle": "Easy and fast fresh Indian cheese",
+    "ingredients": [
+      { "name": "Organic Whole milk", "quantity": "8 cups" },
+      { "name": "White Vinegar", "quantity": "About 1/2 cup" },
+      { "name": "Cheesecloth", "quantity": "1 yard" }
+    ],
+    "directions": "In a large pot over medium flame, heat the milk taking care to stir so as not to burn."
+  },
+  {
+    "title": "Saag Paneer",
+    "subtitle": "Easy and fast fresh Indian cheese",
+    "ingredients": [
+      { "name": "Organic Whole milk", "quantity": "8 cups" },
+      { "name": "White Vinegar", "quantity": "About 1/2 cup" },
+      { "name": "Cheesecloth", "quantity": "1 yard" }
+    ],
+    "directions": "In a large pot over medium flame, heat the milk taking care to stir so as not to burn."
+  },
+  {
+    "title": "TOmato Pesto",
+    "subtitle": "Easy and fast fresh Indian cheese",
+    "ingredients": [
+      { "name": "Organic Whole milk", "quantity": "8 cups" },
+      { "name": "White Vinegar", "quantity": "About 1/2 cup" },
+      { "name": "Cheesecloth", "quantity": "1 yard" }
+    ],
+    "directions": "In a large pot over medium flame, heat the milk taking care to stir so as not to burn."
+  }
+]

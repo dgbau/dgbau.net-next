@@ -1,56 +1,54 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import Layout from '../components/Layout';
+
 import styles from '../styles/Home.module.scss';
 
-const IEX_KEY = process.env.IEX_KEY || '0000000000';
+import { getSortedPostsData } from '../lib/posts';
 
-export default function Home() {
+const onSubmit = () => {
+  console.log('onSubnit');
+};
+
+export default function Home({ allPostsData }) {
   return (
-    <div className={styles.container}>
+    <Layout home>
       <Head>
-        <title>dgbau.net</title>
+        <title>//∆ß</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome.</h1>
-
-        <p className={styles.description}>
-          <code className={styles.code}>Made with ❤️ and next.js</code>
-        </p>
-        <p className={styles.description}>
-          <code className={styles.code}>{IEX_KEY}</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href='https://nextjs.org/docs' className={styles.card}>
-            <h3>Projects</h3>
-            {/* <p>Past and Present</p> */}
-          </a>
-
-          <a href='https://nextjs.org/learn' className={styles.card}>
-            <h3>Research</h3>
-            {/* <p>Academic and Personal</p> */}
-          </a>
-
-          <a href='https://github.com/vercel/next.js/tree/master/examples' className={styles.card}>
-            <h3>About</h3>
-            {/* <p>CV and other resources</p> */}
-          </a>
-
-          <a
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            className={styles.card}>
-            <h3>Contact</h3>
-            {/* <p>Get in touch!</p> */}
-          </a>
-        </div>
+        <h1 className='bp3-heading'>Welcome.</h1>
+        <p>If you're seeing this site, come back soon! Site is under construction.</p>
+        {/* <p className={styles.code}>
+          <code className='.bp3-monospace-text'>Made with ❤️ and next.js</code>
+        </p> */}
       </main>
 
       <footer className={styles.footer}>
-        {/* <a href='http://linkedin.com/in/dgbau' target='_blank' rel='noopener noreferrer'> */}©
-        2021 David Bau
-        {/* </a> */}
+        <p> © 2021 David Bau</p>
+        <p>Made with ❤️ and next.js</p>
       </footer>
-    </div>
+    </Layout>
   );
 }
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+// export async function getServerSideProps(context) {
+//   console.log(context);
+//   return {
+//     props: {
+//       test: 'test',
+//     },
+//   };
+// }
