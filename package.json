@@ -22,7 +22,7 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "sass": "^1.32.8",
-    "webpack": "^5.19.0"
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.30",
