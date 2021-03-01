@@ -12,6 +12,9 @@ const themeVariables = lessToJS(
 
 module.exports = withSass({
   cssModules: true,
+  sassLoaderOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
   ...withLess({
     lessLoaderOptions: {
       javascriptEnabled: true,
@@ -43,6 +46,7 @@ module.exports = withSass({
           test: antStyles,
           use: 'null-loader',
         });
+        config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
       }
       return config;
     },
