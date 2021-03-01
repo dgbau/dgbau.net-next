@@ -10,6 +10,11 @@ const themeVariables = lessToJS(
   fs.readFileSync(path.resolve(__dirname, './less/antd-custom.less'), 'utf8')
 );
 
+// fix: prevents error when .less files are required by node
+if (typeof require !== 'undefined') {
+  require.extensions['.less'] = (file) => {};
+}
+
 module.exports = withSass({
   cssModules: true,
   sassLoaderOptions: {
