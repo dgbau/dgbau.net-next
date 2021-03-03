@@ -1,10 +1,10 @@
 import Layout from '../../components/Layout/Layout';
 
-export default function Viz() {
+export default function Projects() {
   return (
     <Layout home={false}>
       <>
-        <div>This will contain visualizations.</div>
+        <p>This will contain projects.</p>
       </>
     </Layout>
   );

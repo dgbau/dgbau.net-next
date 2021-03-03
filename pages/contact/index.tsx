@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout/Layout';
 const layout = {
   labelCol: { span: 24 },
   wrapperCol: { span: 24 },

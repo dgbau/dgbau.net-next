@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../components/Layout';
+import { Card, Button, Elevation } from '@blueprintjs/core';
+
+import Layout from '../components/Layout/Layout';
 
 import styles from '../styles/Home.module.scss';
 
@@ -20,17 +23,23 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className='bp3-heading'>Welcome.</h1>
-        <p>If you're seeing this site, come back soon! Site is under construction.</p>
+        <Card className={`${styles.main_card}`} elevation={Elevation.TWO}>
+          <h1 className={`bp3-heading`}>Welcome.</h1>
+          <p>If you're seeing this site, come back soon! Site is under construction.</p>
+          <hr />
+          <br />
+          <Button>Contact Me</Button>
+        </Card>
+
         {/* <p className={styles.code}>
           <code className='.bp3-monospace-text'>Made with ❤️ and next.js</code>
         </p> */}
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <p> © 2021 David Bau</p>
         <p>Made with ❤️ and next.js</p>
-      </footer>
+      </footer> */}
     </Layout>
   );
 }

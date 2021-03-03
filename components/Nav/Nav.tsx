@@ -1,68 +1,65 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu } from 'antd';
-import {
-  MailOutlined,
-  HomeOutlined,
-  SettingOutlined,
-  DotChartOutlined,
-  MediumOutlined,
-  ExperimentOutlined,
-  GithubOutlined,
-} from '@ant-design/icons';
+import { Navbar, AnchorButton, Button, Alignment, Menu, MenuItem, Icon } from '@blueprintjs/core';
+import { Classes, Tooltip2, Popover2 } from '@blueprintjs/popover2';
 
-import css from './Nav.module.scss';
+import styles from './Nav.module.scss';
 
-const { SubMenu } = Menu;
 const handleClick = (e, setCurrent) => {
   console.log('click', e.key);
   setCurrent(e.key);
 };
 
+const jsxContent = (
+  <em>
+    This tooltip contains an <strong>em</strong> tag.
+  </em>
+);
+
 export default function Nav(props: any) {
-  const [current, setCurrent] = useState('home');
   return (
-    <Menu onClick={(e) => handleClick(e, setCurrent)} selectedKeys={[current]} mode='horizontal'>
-      {/* <h3>DG bau</h3> */}
-      <Menu.Item key='home'>
-        {' '}
-        <Link href='/viz'>
-          <a>DG Bau</a>
-        </Link>
-      </Menu.Item>
-      <Menu.Item key='viz' icon={<DotChartOutlined />}>
-        <Link href='/viz'>
-          <a>{null}</a>
-        </Link>
-      </Menu.Item>
-      <Menu.Item key='research' icon={<ExperimentOutlined />}>
-        <Link href='/research'>
-          <a>{null}</a>
-        </Link>
-      </Menu.Item>
-      <Menu.Item key='contact' icon={<MailOutlined />}>
-        <Link href='/contact'>
-          <a>{null}</a>
-        </Link>
-      </Menu.Item>
-      <Menu.Item key='medium' icon={<MediumOutlined />}>
-        <a href='https://medium.com' target='_blank' rel='noopener noreferrer'></a>
-      </Menu.Item>
-      <Menu.Item key='github' icon={<GithubOutlined />}>
-        <a href='https://github.com' target='_blank' rel='noopener noreferrer'></a>
-      </Menu.Item>
-      <Menu.Item key='settings' icon={<SettingOutlined />}></Menu.Item>
-      {/* <SubMenu key='settings' icon={<SettingOutlined />}>
-        <Menu.ItemGroup title='Theme'>
-          <Menu.Item key='light-theme'>Light</Menu.Item>
-          <Menu.Item key='dark-theme'>Dark</Menu.Item>
-        </Menu.ItemGroup>
-        <Menu.ItemGroup title='Language'>
-          <Menu.Item key='lang-en'>English</Menu.Item>
-          <Menu.Item key='lang-scram'>Scrambled</Menu.Item>
-        </Menu.ItemGroup>
-      </SubMenu> */}
-    </Menu>
+    <div className={styles.nav}>
+      <Navbar fixedToTop={true}>
+        <Navbar.Group align={Alignment.LEFT}>
+          <Navbar.Heading>
+            <AnchorButton className='bp3-minimal' icon='asterisk' href='/' />
+          </Navbar.Heading>
+          <Navbar.Divider />
+          <AnchorButton className='bp3-minimal' icon='wrench' href='/projects' />
+          <AnchorButton className='bp3-minimal' icon='learning' href='/research' />
+          <Navbar.Divider />
+          <Popover2
+            content={
+              <Menu className={Classes.CONTEXT_MENU2}>
+                <MenuItem icon='social-media' text='Social' href='/social' />
+                <MenuItem icon='envelope' text='email' href='/contact' />
+                <MenuItem text='chat' href='/chat' />
+              </Menu>
+            }>
+            <Button className='bp3-minimal' icon='chat' />
+          </Popover2>
+          <Popover2
+            content={
+              <Menu className={Classes.CONTEXT_MENU2}>
+                <MenuItem icon='style' text='theme' />
+                <MenuItem icon='envelope' text='email' />
+              </Menu>
+            }>
+            <Button className='bp3-minimal' icon='cog' />
+          </Popover2>
+        </Navbar.Group>
+      </Navbar>
+      {/* <ul>
+        <li className={styles.navitem}>
+          <h2>David Bau</h2>
+        </li>
+        <hr />
+        <li className={styles.navitem}>Projects</li>
+        <li className={styles.navitem}>Media</li>
+        <li className={styles.navitem}>About</li>
+        <li className={styles.navitem}>Connect</li>
+      </ul> */}
+    </div>
   );
 }
 

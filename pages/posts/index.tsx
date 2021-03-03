@@ -1,4 +1,3 @@
-// import Layout from '../../components/layout'
 import Link from 'next/link';
 import { getAllPostIds, getPostData, getSortedPostsData } from '../../lib/posts';
 import styles from '../../styles/Posts.module.scss';

@@ -1,16 +1,25 @@
-.navbar {
-  background-color: aqua;
-  //   h1 {
-  //     color: red !important;
-  //   }
-  .bp3-align-left {
-    background-color: aqua;
+.nav {
+  ul {
+    // list-style: none;
+    padding: 0;
+    // list-style-type: none;
+    // display: flex;
+    // flex-direction: column;
   }
-  .logo {
-    // background-color: aqua;
-    color: red;
-  }
-  .listitem {
-    color: greenyellow;
+  li {
+    margin: 10px 0;
+    list-style: none;
+    // color: white;
+    // font-size: 25px;
+    // position: relative;
+    /* top: 400px;  Removed this*/
+    right: 50px;
   }
 }
+
+// .navitem {
+//   display: inline-flex;
+//   flex-direction: column;
+//   padding: 0 0.6rem;
+//   list-style: none;
+// }
