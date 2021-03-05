@@ -1,14 +1,17 @@
+import Layout from '../../components/Layout/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export default function Post({ postData }) {
   return (
-    <div>
-      <h2>{postData.title}</h2>
-      <br />
-      {postData.date}
-      <br />
-      <code>{postData.id}</code>
-    </div>
+    <Layout>
+      <div>
+        <h2>{postData.title}</h2>
+        <br />
+        {postData.date}
+        <br />
+        <code>{postData.id}</code>
+      </div>
+    </Layout>
   );
 }
 
