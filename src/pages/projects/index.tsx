@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout/Layout';
-import project from '../../data/projects/this-site';
+import project from '../../../data/projects/this-site';
 import styles from '../../styles/Projects.module.scss';
 
 export default function Projects() {

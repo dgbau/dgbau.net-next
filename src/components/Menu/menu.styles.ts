@@ -103,7 +103,7 @@ export const StyledSidebar = styled.aside<SidebarProps>`
     bottom: 0;
     right: 0;
     padding: 50px 10px;
-    width: min(75vw, 400px);
+    width: min(40vw, 200px);
     height: 100vh;
     outline: 0;
     background-color: var(--light-navy);
@@ -119,7 +119,7 @@ export const StyledSidebar = styled.aside<SidebarProps>`
     flex-direction: column;
     color: var(--lightest-slate);
     font-family: var(--font-mono);
-    text-align: center;
+    text-align: right;
   }
   ol {
     padding: 0;
@@ -129,15 +129,15 @@ export const StyledSidebar = styled.aside<SidebarProps>`
     li {
       position: relative;
       margin: 0 auto 20px;
-      counter-increment: item 1;
+      /* counter-increment: item 1; */
       font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
       @media (max-width: 600px) {
         margin: 0 auto 10px;
       }
       &:before {
-        content: '0' counter(item) '.';
-        display: block;
-        margin-bottom: 5px;
+        /* content: '0' counter(item) '.'; */
+        /* display: block; */
+        /* margin-bottom: 5px; */
         color: var(--green);
         font-size: var(--fz-sm);
       }
