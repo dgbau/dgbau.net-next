@@ -2,29 +2,11 @@
 
 .container {
   display: flex;
-  order: 0;
-  // max-width: 60rem;
-  // padding: 0 1rem;
-  // margin: 1rem auto;
-}
-
-.nav {
-  order: 0;
-  background-color: #fcfcfc;
-  width: 250px;
-  height: 300px;
-  hr {
-    height: 1px;
-    background-color: #ddd;
-    border: none;
-  }
-  padding: 20px;
+  flex-direction: column;
+  min-height: 80vh;
 }
 
 .main {
-  // background-color: blue;
-  order: 1;
-  margin: 0 1em;
   width: 100%;
 }
 

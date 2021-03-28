@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-import styles from './Welcome.module.scss';
+import styles from './Hero.module.scss';
 
 const handleClick = (e, setCurrent) => {
   console.log('click', e.key);
   setCurrent(e.key);
 };
 
-export default function Welcome(props: any) {
+export default function Hero(props: any) {
   return (
     <div className={styles.container}>
       <div className={`${styles.main_welcome}`}>

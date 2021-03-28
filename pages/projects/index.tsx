@@ -12,7 +12,7 @@ export default function Projects() {
           <span>
             Tags:{' '}
             {project.tags.map((tag, idx) => (
-              <em>{tag + (idx != project.tags.length - 1 ? ', ' : '')} </em>
+              <em key={idx}>{tag + (idx != project.tags.length - 1 ? ', ' : '')} </em>
             ))}
           </span>
 

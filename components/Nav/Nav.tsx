@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { navLinks } from '../../settings/config';
+import Menu from '../Menu/Menu';
 
 import styles from './Nav.module.scss';
 
@@ -10,32 +12,26 @@ const handleClick = (e, setCurrent) => {
 
 export default function Nav(props: any) {
   return (
-    <div className={styles.nav}>
-      <ul>
-        <li className={styles.navitem}>
-          <Link href='/'>
-            <a>
-              <h2>David Bau</h2>
-            </a>
-          </Link>
-        </li>
-        <hr />
-        <li className={styles.navitem}>
-          <Link href='/projects'>
-            <a>Projects</a>
-          </Link>
-        </li>
-        <li className={styles.navitem}>
-          <Link href='/posts'>
-            <a>Posts</a>
-          </Link>
-        </li>
-        <li className={styles.navitem}>
-          <Link href='/about'>
-            <a>About</a>
-          </Link>
-        </li>
-      </ul>
+    <div className={styles.header}>
+      <div className={styles.navLogo}>
+        <Link href='/'>
+          <a>
+            <div>//∆</div>
+          </a>
+        </Link>
+      </div>
+      <div className={styles.navLinks}>
+        <ul>
+          {navLinks.map((navLink, i) => (
+            <li className={styles.navitem} key={i}>
+              <Link href={navLink.url}>
+                <a>{navLink.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Menu />
     </div>
   );
 }

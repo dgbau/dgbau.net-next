@@ -3,10 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/Layout/Layout';
 
-import styles from '../styles/index.module.scss';
-
 import { getSortedPostsData } from '../lib/posts';
-import Welcome from '../components/Welcome/Welcome';
+import Hero from '../components/sections/Hero/Hero';
+import About from '../components/sections/About/About.jsx';
 
 const onSubmit = () => {
   console.log('onSubnit');
@@ -19,8 +18,8 @@ export default function Home({ allPostsData }) {
         <title>//∆ß</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={styles.main}>
-        <Welcome></Welcome>
+      <main>
+        <Hero></Hero>
       </main>
     </Layout>
   );

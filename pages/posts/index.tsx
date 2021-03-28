@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getAllPostIds, getPostData, getSortedPostsData } from '../../lib/posts';
-import styles from '../../styles/Posts.module.scss';
+import styles from './Posts.module.scss';
 import Layout from '../../components/Layout/Layout';
 
 export default function Post({ allPostsData }) {
@@ -9,8 +9,8 @@ export default function Post({ allPostsData }) {
       <section className={`${''} ${''}`}>
         <h2 className={''}>Latest Posts</h2>
         <ul className={styles.postlist}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li>
+          {allPostsData.map(({ id, date, title }, i) => (
+            <li key={i}>
               <Link href={`/posts/${id}`}>
                 <a>
                   <h5>{title}</h5>
