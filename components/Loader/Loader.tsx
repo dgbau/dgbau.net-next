@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // import { IconLoader } from '@components/icons';
 
-const StyledLoader = styled.div`
+type StyledLoaderProps = {
+  isMounted: boolean;
+};
+
+const StyledLoader = styled.div<StyledLoaderProps>`
   ${({ theme }) => theme.mixins.flexCenter};
   position: fixed;
   top: 0;
@@ -20,7 +24,7 @@ const StyledLoader = styled.div`
     width: max-content;
     max-width: 100px;
     transition: var(--transition);
-    opacity: ${(props: any) => (props.isMounted ? 1 : 0)};
+    opacity: ${({ isMounted }) => (isMounted ? 1 : 0)};
     svg {
       display: block;
       width: 100%;
